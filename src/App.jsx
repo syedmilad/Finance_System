@@ -1,10 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import ProtectedRoute from './components/ProtectedRoute'
+import { Dashboard, Login, Signup, Welcome } from './pages'
 
 function App() {
   return (
-    <>
-      <h1>afjlkasdlfj</h1>
-    </>
+    <Routes>
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<Dashboard />} />
+      </Route>
+      <Route path="/sign-in" element={<Login />} />
+      <Route path="/sign-in" element={<Login />} />
+      <Route path="/welcome-page" index element={<Welcome />} />
+    </Routes >
   )
 }
 

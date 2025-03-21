@@ -1,0 +1,30 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind theme
+
+@tailwind utilities;
+
+@layer utilities {
+  .font-size-xs {
+    @apply text-[12px] leading-[16px];
+  }
+  .font-size-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .font-size-md {
+    @apply text-[16px] leading-[24px];
+  }
+  .font-size-lg {
+    @apply text-[18px] leading-[24px];
+  }
+  .font-size-xl {
+    @apply text-[20px] leading-[28px];
+  }
+  .font-size-2xl {
+    @apply text-[22px] leading-[32px];
+  }
+  .font-size-3xl {
+    @apply text-[24px] leading-[28px];
+  }
+}
