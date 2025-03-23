@@ -12,7 +12,7 @@ function App() {
         </Route>
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
-        <Route path="/welcome-page" index element={<Welcome />} />
+        <Route path="/welcome-page" exact  element={<Welcome />} />
       </Routes >
     </>
   )
