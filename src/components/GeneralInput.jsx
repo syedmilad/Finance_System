@@ -2,7 +2,7 @@ import React from 'react'
 
 const GeneralInput = ({ type, name, placeholder, value, onChange, error, label, isIcon, isNotification, notificationText, imgSrc }) => {
     return (
-        <div className='flex flex-col w-full'>
+        <div className='flex flex-col w-full mt-4 mb-4'>
             <div className='flex flex-row justify-between items-center'>
                 <label className='text-base mb-2 font-medium text-[#191D23]' htmlFor={name}>{label}</label>
                 {isNotification && <span>{notificationText}</span>}
