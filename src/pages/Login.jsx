@@ -12,13 +12,12 @@ const Login = () => {
   })
   const onchangeHandler = (e) => {
     const { name, value, type, checked } = e.target;
-    console.log("vaule==>",{ name, value, type, checked })
     e.preventDefault();
     const valueToUse = type === "checkbox" ? checked : value;
     setInput((prev) => ({ ...prev, [name]: valueToUse }))
   }
   return (
-    <div className='flex justify-center  p-8 items-center h-screen'>
+    <div className='flex justify-center p-8 items-center h-screen'>
       <div className='max-w-[400px] w-screen'>
         <div className='flex justify-center mb-[4rem] items-center'>
           <img src={lightLogo} alt="lightLogo" className='w-[276px] h-[32px] ' />
@@ -33,7 +32,7 @@ const Login = () => {
           <img src={google} alt="google" />
           <p>Continue with Google</p>
         </div>
-        <p className='text-primary text-base text-center mt-4'>Create an account</p>
+        <p className='text-primary text-base text-center mt-4 cursor-pointer'>Create an account</p>
       </div>
     </div>
   )
