@@ -10,6 +10,8 @@ import Transactions from "./transactions.svg";
 import ThreeDot from "./threeDot.svg";
 import Logout from "./logout.svg";
 import ProfileImg from "./profile.png";
+import ChecronsRight from "./checronsRight.svg"
+import NotificationIcon from "./NotificationIcon.svg";
 
 
 export {
@@ -25,4 +27,6 @@ export {
   ThreeDot,
   Logout,
   ProfileImg,
+  ChecronsRight,
+  NotificationIcon
 };
