@@ -4,16 +4,16 @@ import SearchWithDebounce from '../components/SearchWithDebounce'
 
 const Header = () => {
   const [inputValue, setInputValue] = React.useState('');
-  const debounce = (callback,delay) =>{
+  const debounce = (callback, delay) => {
     let timeoutId;
-    return (value) =>{
+    return (value) => {
       clearTimeout(timeoutId);
-      timeoutId  = setTimeout(() => {
+      timeoutId = setTimeout(() => {
         callback(value)
       }, delay);
     }
   }
-  const hanldeSearch = (value) =>{
+  const hanldeSearch = (value) => {
     try {
       console.log("searching for ", value)
     } catch (error) {
@@ -30,9 +30,9 @@ const Header = () => {
           <p className='text-sm font-normal text-[#9F9F9F]'>May 19, 2025</p>
         </div>
       </div>
-      <div className='flex flex-row justify-start items-center gap-4'>
+      <div className='flex flex-row justify-start items-center gap-6'>
         <img src={NotificationIcon} alt="notificationIcon" className='w-[24px] h-[24px] object-contain cursor-pointer' />
-        <SearchWithDebounce onChange={(e)=>{
+        <SearchWithDebounce onChange={(e) => {
           const value = e.target.value;
           setInputValue(value);
           debounceSearch(value)
