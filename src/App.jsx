@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import ProtectedRoute from './components/ProtectedRoute'
-import { Dashboard, ForgotPassword, Login, Signup, Welcome } from './pages'
+import { Balances, Bills, Dashboard, Expenses, ForgotPassword, Goals, Login, Settings, Signup, Transactions, Welcome } from './pages'
+import BaseLayout from './pages/BaseLayout'
 
 function App() {
   return (
@@ -9,11 +10,17 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/balances" element={<Balances />} />
+          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/goals" element={<Goals />} />
+          <Route path="/bills" element={<Bills />} />
+          <Route path="/expenses" element={<Expenses />} />
+          <Route path="/settings" element={<Settings />} />
         </Route>
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/welcome-page" exact  element={<Welcome />} />
+        <Route path="/welcome-page" exact element={<Welcome />} />
       </Routes >
     </>
   )

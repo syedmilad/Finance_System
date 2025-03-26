@@ -1,11 +1,23 @@
-import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import BaseLayout from '../pages/BaseLayout';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const ProtectedRoute = () => {
-    const isAuthenticated = localStorage.getItem("isAuthenticated")
+    const navigate = useNavigate();
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate('/sign-in')
+        }
+    }, [navigate, isAuthenticated])
+
+    if (!isAuthenticated) return null;
+
     return (
-        isAuthenticated ? <Outlet /> : <Navigate to="/welcome-page" replace  />
-    )
+        <BaseLayout>
+            <Outlet />
+        </BaseLayout>
+    );
 }
 
 export default ProtectedRoute
