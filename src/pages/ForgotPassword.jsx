@@ -23,10 +23,10 @@ const ForgotPassword = () => {
         </div>
         <GeneralInput label="Email Address" name="email" type="email" onChange={onchangeHandler} value={input.email || ""} placeholder="hello@example.com" />
         <Button title="Password Reset" classess="w-full bg-primary text-white !rounded-[4px] !text-xl mb-4" />
-        <Button title="Back to login" onClick={()=> navigate("/sign-in")} classess="w-full bg-[#fff] text-grayLight !text-xl" />
+        <Button title="Back to login" onClick={()=> navigate("/sign-in")} classess="w-full !bg-[#fff] text-grayLight !text-xl" />
       </div>
     </div>
   )
-}
+} 
 
 export default ForgotPassword
