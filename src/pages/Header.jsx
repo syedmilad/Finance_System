@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { ChecronsRight, NotificationIcon } from '../assets'
 import SearchWithDebounce from '../components/SearchWithDebounce'
 
 const Header = () => {
+  const [inputValue, setInputValue] = React.useState('');
+  const debounce = (callback,delay) =>{
+    let timeoutId;
+    return (value) =>{
+      clearTimeout(timeoutId);
+      timeoutId  = setTimeout(() => {
+        callback(value)
+      }, delay);
+    }
+  }
+  const hanldeSearch = (value) =>{
+    try {
+      console.log("searching for ", value)
+    } catch (error) {
+      console.log("error in search", error)
+    }
+  }
+  const debounceSearch = useCallback(debounce(hanldeSearch, 1000), []);
   return (
     <div className='w-full h-full bg-[#F4F5F7] flex items-center justify-between px-[20px] py-[32px] '>
       <div className='flex flex-row justify-start items-center gap-4'>
@@ -13,8 +31,12 @@ const Header = () => {
         </div>
       </div>
       <div className='flex flex-row justify-start items-center gap-4'>
-        <img src={NotificationIcon} alt="notificationIcon" />
-        <SearchWithDebounce />
+        <img src={NotificationIcon} alt="notificationIcon" className='w-[24px] h-[24px] object-contain cursor-pointer' />
+        <SearchWithDebounce onChange={(e)=>{
+          const value = e.target.value;
+          setInputValue(value);
+          debounceSearch(value)
+        }} value={inputValue} />
       </div>
     </div>
   )

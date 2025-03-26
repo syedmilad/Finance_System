@@ -12,6 +12,7 @@ import Logout from "./logout.svg";
 import ProfileImg from "./profile.png";
 import ChecronsRight from "./checronsRight.svg"
 import NotificationIcon from "./NotificationIcon.svg";
+import SearchIcon from "./searchIcon.svg";
 
 
 export {
@@ -28,5 +29,6 @@ export {
   Logout,
   ProfileImg,
   ChecronsRight,
-  NotificationIcon
+  NotificationIcon,
+  SearchIcon
 };
