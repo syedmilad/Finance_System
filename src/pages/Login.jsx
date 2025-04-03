@@ -3,6 +3,8 @@ import { lightLogo, google } from "../assets"
 import { Button, GeneralInput } from '../components'
 import Checkbox from '../components/Checkbox'
 import { useNavigate } from 'react-router-dom'
+import { signIn } from '../services/authService'
+import { toast } from 'react-toastify'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -18,15 +20,31 @@ const Login = () => {
     const valueToUse = type === "checkbox" ? checked : value;
     setInput((prev) => ({ ...prev, [name]: valueToUse }))
   }
-  const onLoginHandler = (e) => {
+  const onLoginHandler = async (e) => {
     e.preventDefault();
-    const userAuth = localStorage.getItem("userData")
-    const user = JSON.parse(userAuth);
 
-    if (user.email === input.email && user.password === input.password) {
-      console.log("Login Success")
-      localStorage.setItem("isAuthenticated", true)
-      window.location.href = "/"
+    if (input.email && input.password) {
+      const creadential = {
+        email: input.email,
+        password: input.password,
+      }
+      try {
+        const response =  await signIn(creadential)
+        console.log("Response In Login", response)
+        if (response) {
+          toast.success(response.message || "Login Successful!")
+          console.log("Login Successful")
+          const user = response.data
+          localStorage.setItem("userData", JSON.stringify(user))
+          localStorage.setItem("isAuthenticated", true)
+          navigate("/")
+        } else {
+          toast.error(response ||  "Login Failed!");
+          console.log("Login Failed")
+        }
+      } catch (error) {
+        console.log("Error occurred during login:", error);
+      }
     } else {
       console.log("Login Failed")
     }

@@ -25,12 +25,13 @@ const Sidebar = () => {
                 </div>
             </div>
             <div className='flex  flex-col'>
-                    <div className='flex justify-start items-center w-full gap-4 px-[16px] py-[12px] bg-[#262626] cursor-pointer rounded-[4px]'>
-                        <img src={Logout} alt="logout" />
-                        <span onClick={()=> {
-                            localStorage.removeItem('isAuthenticated');
+                    <div onClick={()=> {
+                            localStorage.setItem('isAuthenticated',false);
+                            localStorage.removeItem('userData');
                             navigate('/sign-in',{replace:true})
-                        }}>Logout</span>
+                        }} className='flex justify-start items-center w-full gap-4 px-[16px] py-[12px] bg-[#262626] cursor-pointer rounded-[4px]'>
+                        <img src={Logout} alt="logout" />
+                        <span >Logout</span>
                     </div>
                     <div className='w-full border-b h-[3px] mt-6 mb-6 border-b-[#262626]' />
                     <div className='flex justify-center items-center w-full gap-4 px-[12px] py-[8px]'>

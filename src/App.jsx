@@ -3,10 +3,12 @@ import './App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 import { Balances, Bills, Dashboard, Expenses, ForgotPassword, Goals, Login, Settings, Signup, Transactions, Welcome } from './pages'
 import BaseLayout from './pages/BaseLayout'
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
+     <ToastContainer position="top-right" autoClose={3000} />
       <Routes>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Dashboard />} />
