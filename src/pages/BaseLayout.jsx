@@ -9,7 +9,7 @@ const BaseLayout = ({ children }) => {
         <Sidebar />
       </div>
       <div className="w-full h-full">
-        <div className=" min-w-[40px] border border-black-200">
+        <div className=" min-w-[40px] border-b border-b-[#E8E8E8]">
           <Header />
         </div>
         {children}
