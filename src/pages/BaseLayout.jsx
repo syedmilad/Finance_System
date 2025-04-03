@@ -8,8 +8,8 @@ const BaseLayout = ({ children }) => {
       <div className='min-w-[280px] '>
         <Sidebar />
       </div>
-      <div className="w-full  ">
-        <div className="min-h-[88px] ">
+      <div className="w-full h-full">
+        <div className=" min-w-[40px] border border-black-200">
           <Header />
         </div>
         {children}

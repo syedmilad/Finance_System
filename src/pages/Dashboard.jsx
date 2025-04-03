@@ -1,6 +1,9 @@
 import React from 'react'
 import { Button } from '../components'
 import { useNavigate } from 'react-router-dom'
+import UpcomingBalance from '../components/UpcomingBalance'
+import Goals from '../components/Goals'
+import TotalBalance from '../components/TotalBalance'
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -10,9 +13,22 @@ const Dashboard = () => {
     navigate("/sign-in", { replace: true })
   }
   return (
-    <div className=''>
-      <h1>Dashboard</h1>
-      <button title="logout" onClick={onLogoutHandler}> logout </button>
+    <div className='h-[calc(100% - 40px)] w-full px-[14px] py-[16px] bg-[#F4F5F7]'>
+      <div className='min-h-[20%]'>
+       <div className='flex flex-row flex-wrap gap-2 justify-start items-center'>
+        <div className='flex flex-1 min-h-[272px]  overflow-auto '>
+          <TotalBalance />
+        </div>
+        <div className='flex flex-1 min-h-[272px]  '>
+          <Goals />
+        </div>
+        <div className='flex flex-1 min-h-[272px] '>
+          <UpcomingBalance />
+        </div>
+       </div>
+      </div>
+      <div className='min-h-[80%]'>
+      </div>
     </div>
   )
 }

@@ -22,7 +22,7 @@ const Header = () => {
   }
   const debounceSearch = useCallback(debounce(hanldeSearch, 1000), []);
   return (
-    <div className='w-full h-full bg-[#F4F5F7] flex items-center justify-between px-[20px] py-[32px] '>
+    <div className='w-full h-full bg-[#F4F5F7] flex items-center justify-between px-[14px] py-[16px] '>
       <div className='flex flex-row justify-start items-center gap-4'>
         <p className='text-3xl text-[#191919] font-bold'>Hello Milad  </p>
         <div className='flex flex-row justify-start items-center gap-1'>

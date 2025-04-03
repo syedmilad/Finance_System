@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
-     <ToastContainer position="top-right" autoClose={3000} />
+     <ToastContainer position="bottom-center" autoClose={3000} />
       <Routes>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Dashboard />} />
