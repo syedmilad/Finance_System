@@ -32,7 +32,7 @@ const TotalBalance = () => {
                 <div className='flex flex-col '>
                     <div className='flex flex-row justify-between items-center'>
                         <h1 className='text-2xl text-[#191919] font-bold '>${totalAmountWithMemoized}</h1>
-                        <h1 className='text-sm font-medium text-[#525256]'>All Accounts</h1>
+                        <h1 className='text-sm font-medium text-[#525256] cursor-pointer'>All Accounts</h1>
                     </div>
                 </div>
                 <br className='' />
@@ -49,7 +49,7 @@ const TotalBalance = () => {
                         <h1 className='text-sm font-normal text-[#fff]'>{totalBalance[active - 1]?.accountNumber}</h1>
                         <div className='flex flex-row items-center gap-2'>
                             <h1 className='text-base font-bold text-[#fff]'>${totalBalance[active - 1]?.amount}</h1>
-                            <div className='h-8 w-8 rounded-full bg-[#fff] flex justify-center items-center'>
+                            <div className='h-8 w-8 rounded-full bg-[#fff] flex justify-center items-center cursor-pointer'>
                                 <ArrowUpRight className='h-5 w-5 text-[#299D91] ' />
                             </div>
                         </div>
