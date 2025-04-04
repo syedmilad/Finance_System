@@ -1,4 +1,4 @@
-import { Figma, Adobe } from "../assets/index";
+import { Figma, Adobe,Game,Taxi,PoloShirt,Food,Keyboard } from "../assets/index";
 
 export const totalBalance = [
   {
@@ -45,4 +45,53 @@ export const upcomingBill = [
     lastCharge: "17 June, 2023",
     amount: "559",
   },
+];
+
+
+export const transactions = [
+  { 
+      id: 1, 
+      title: "GTR 5", 
+      category: "Gadget & Gear", 
+      amount: 160.00, 
+      type: "revenue", 
+      date: "17 May 2023", 
+      icon: Game 
+  },
+  { 
+      id: 2, 
+      title: "Polo Shirt", 
+      category: "XL fashions", 
+      amount: 20.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: PoloShirt 
+  },
+  { 
+      id: 3, 
+      title: "Biriyani", 
+      category: "Hajir Biriyani", 
+      amount: 10.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Food
+  },
+  { 
+      id: 4, 
+      title: "Taxi Fare", 
+      category: "Uber", 
+      amount: 12.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Taxi 
+  },
+  { 
+      id: 5, 
+      title: "Keyboard", 
+      category: "Gadget & Gear", 
+      amount: 22.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Keyboard
+  }
 ];

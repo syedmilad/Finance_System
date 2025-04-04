@@ -20,6 +20,12 @@ import Cross from "./cross.svg";
 import Figma from "./figma.svg"
 import Adobe from "./adobe.svg"
 
+import Taxi from "./taxi.svg"
+import Game from "./game.svg"
+import PoloShirt from "./poloShirt.svg"
+import Food from "./food.svg"
+import Keyboard from "./keyboard.svg"
+
 
 export {
   lightLogo,
@@ -42,5 +48,10 @@ export {
   Goal,
   Cross,
   Figma,
-  Adobe
+  Adobe,
+  Taxi,
+  Game,
+  PoloShirt,
+  Food,
+  Keyboard,
 };
