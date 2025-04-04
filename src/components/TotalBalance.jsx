@@ -24,13 +24,13 @@ const TotalBalance = () => {
     return (
         <div className="flex flex-col w-full h-full !overflow-x-hidden !overflow-y-hidden">
             {/* Header */}
-            <div className='flex flex-row justify-start items-start'>
+            <div className='flex flex-row justify-start items-start '>
                 <span className='text-2xl text-[#878787] font-normal mb-1'>Total Balance</span>
             </div>
             {/* Total Amount */}
             <div className='shadow-2xl bg-[#fff] rounded-[8px]  p-6'>
                 <div className='flex flex-col '>
-                    <div className='flex flex-row justify-between items-center'>
+                    <div className='flex flex-row justify-between items-center border-b border-b-[#E8E8E8] pb-2  '>
                         <h1 className='text-2xl text-[#191919] font-bold '>${totalAmountWithMemoized}</h1>
                         <h1 className='text-sm font-medium text-[#525256] cursor-pointer'>All Accounts</h1>
                     </div>

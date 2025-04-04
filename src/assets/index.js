@@ -13,6 +13,9 @@ import ProfileImg from "./profile.png";
 import ChecronsRight from "./checronsRight.svg"
 import NotificationIcon from "./NotificationIcon.svg";
 import SearchIcon from "./searchIcon.svg";
+import Edit from "./edit.svg";
+import Award from "./award.svg";
+import Goal from "./goal.svg";
 
 
 export {
@@ -30,5 +33,8 @@ export {
   ProfileImg,
   ChecronsRight,
   NotificationIcon,
-  SearchIcon
+  SearchIcon,
+  Edit,
+  Award,
+  Goal
 };
