@@ -22,16 +22,16 @@ const Header = () => {
   }
   const debounceSearch = useCallback(debounce(hanldeSearch, 1000), []);
   return (
-    <div className='w-full h-full bg-[#F4F5F7] flex items-center justify-between px-[14px] py-[16px] '>
+    <div className='w-full h-full bg-[#F4F5F7] flex items-center justify-between px-[16px] py-[10px] '>
       <div className='flex flex-row justify-start items-center gap-4'>
-        <p className='text-3xl text-[#191919] font-bold'>Hello Milad  </p>
+        <p className='text-lg text-[#191919] font-bold'>Hello Milad  </p>
         <div className='flex flex-row justify-start items-center gap-1'>
           <img src={ChecronsRight} className='w-[20px] h-[20px] object-cover' alt="ChecronsRight" />
           <p className='text-sm font-normal text-[#9F9F9F]'>May 19, 2025</p>
         </div>
       </div>
       <div className='flex flex-row justify-start items-center gap-6'>
-        <img src={NotificationIcon} alt="notificationIcon" className='w-[24px] h-[24px] object-contain cursor-pointer' />
+        <img src={NotificationIcon} alt="notificationIcon" className='w-[16px] h-[16px] object-contain cursor-pointer' />
         <SearchWithDebounce onChange={(e) => {
           const value = e.target.value;
           setInputValue(value);

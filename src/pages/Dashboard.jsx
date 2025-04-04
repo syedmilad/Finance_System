@@ -13,7 +13,7 @@ const Dashboard = () => {
     navigate("/sign-in", { replace: true })
   }
   return (
-    <div className='h-[calc(100% - 40px)] w-full px-[14px] py-[16px] bg-[#F4F5F7]'>
+    <div className='h-[calc(100% - 40px)] w-full px-[14px] py-[12px] bg-[#F4F5F7]'>
       <div className='min-h-[20%]'>
        <div className='flex !flex-wrap gap-2 justify-start items-start'>
         <div className='flex flex-1 min-h-[272px]  overflow-auto '>

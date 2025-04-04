@@ -40,10 +40,10 @@ const Goals = () => {
       </Modal>
       {/* Header */}
       <div className='flex flex-row justify-start items-start '>
-        <span className='text-2xl text-[#878787] font-normal mb-1'>Goals</span>
+        <span className='text-lg text-[#878787] font-normal mb-1'>Goals</span>
       </div>
       {/* Total Amount */}
-      <div className='shadow-2xl bg-[#fff] rounded-[8px]  p-6'>
+      <div className='shadow-2xl bg-[#fff] rounded-[8px]  p-4'>
         {/* Content Header */}
         <div className='flex flex-col '>
           <div className='flex flex-row justify-between items-center border-b border-b-[#E8E8E8] pb-2  '>

@@ -9,14 +9,14 @@ const UpcomingBalance = ({ classes }) => {
         <div className="flex flex-col w-full h-full !overflow-x-hidden !overflow-y-hidden">
             {/* Header */}
             <div className='flex flex-row justify-between items-center   '>
-                <span className='text-2xl text-[#878787] font-normal mb-1'>Upcoming Bill</span>
+                <span className='text-lg text-[#878787] font-normal mb-1'>Upcoming Bill</span>
                 <div className='flex flex-row items-center gap-2 text-xs font-medium cursor-pointer '>
                     <span className='text-[#878787] font-normal' onClick={()=> navigate("/bills")} >View All</span>
                     <ChevronRight className='h-4 w-4 text-[#878787] font-normal' />
                 </div>
             </div>
             {/* Total Amount */}
-            <div className='shadow-2xl bg-[#fff] rounded-[8px] p-[34px]'>
+            <div className='shadow-2xl bg-[#fff] rounded-[8px] p-[26px]'>
                 <div className='flex flex-col gap-2'>
                     {upcomingBill.map((item, index) => (
                         <div key={index} className={`flex flex-row justify-between items-center py-2 ${upcomingBill.length - 1 === index ? "" : "border-b border-[#F4F5F7]"} `}>
