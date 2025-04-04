@@ -16,6 +16,7 @@ import SearchIcon from "./searchIcon.svg";
 import Edit from "./edit.svg";
 import Award from "./award.svg";
 import Goal from "./goal.svg";
+import Cross from "./cross.svg";
 
 
 export {
@@ -36,5 +37,6 @@ export {
   SearchIcon,
   Edit,
   Award,
-  Goal
+  Goal,
+  Cross
 };
