@@ -1,3 +1,5 @@
+import { Figma, Adobe } from "../assets/index";
+
 export const totalBalance = [
   {
     id: 1,
@@ -19,5 +21,28 @@ export const totalBalance = [
     type: "Savings",
     accountNumber: "**** **** **** 7890",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg",
+  },
+];
+
+export const upcomingBill = [
+  {
+    id: 1,
+    name: "Figma",
+    logo: Figma,
+    month: "May",
+    date: "15",
+    description: "figma - Monthly",
+    lastCharge: "14 May, 2023",
+    amount: "150",
+  },
+  {
+    id: 2,
+    name: "Adobe",
+    logo: Adobe,
+    month: "June",
+    date: "16",
+    description: "Adobe - Yearly",
+    lastCharge: "17 June, 2023",
+    amount: "559",
   },
 ];

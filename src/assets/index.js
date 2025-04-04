@@ -17,6 +17,8 @@ import Edit from "./edit.svg";
 import Award from "./award.svg";
 import Goal from "./goal.svg";
 import Cross from "./cross.svg";
+import Figma from "./figma.svg"
+import Adobe from "./adobe.svg"
 
 
 export {
@@ -38,5 +40,7 @@ export {
   Edit,
   Award,
   Goal,
-  Cross
+  Cross,
+  Figma,
+  Adobe
 };

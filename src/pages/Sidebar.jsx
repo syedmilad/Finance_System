@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logoWhite from '../assets/logoWhite.svg';
 import { sidebaeData } from '../constants/sidebarData';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Logout, ProfileImg, ThreeDot } from '../assets';
 
 const Sidebar = () => {
     const navigate = useNavigate();
+    const location = useLocation(); // ✅ Get current path
     const [selected, setSelected] = useState({ title: 'Dashboard', path: '/' })
+
+
+    useEffect(() => {
+      const currentPath = sidebaeData.find((sidebar) => sidebar.path === location.pathname);
+      if (currentPath) {
+        setSelected(currentPath); // ✅ Set selected state based on current path
+      }
+        
+    }, [location.pathname]) // ✅ Set selected state based on current path
+    
+
     return (
         <div className='w-full h-full flex flex-col px-[28px] py-[48px] bg-dark text-white '>
             <div className='flex-1 flex flex-col items-start justify-start '>
