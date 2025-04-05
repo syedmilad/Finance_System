@@ -5,6 +5,7 @@ import { Balances, Bills, Dashboard, Expenses, ForgotPassword, Goals, Login, Set
 import BaseLayout from './pages/BaseLayout'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AccountDetails from './components/AccountDetails'
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/balances" element={<Balances />} />
+          <Route path="/balances/accountDetails" element={<AccountDetails />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/goals" element={<Goals />} />
           <Route path="/bills" element={<Bills />} />

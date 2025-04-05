@@ -29,7 +29,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className='min-h-[80%] flex justify-start w-full mt-2'>
+      <div className='min-h-[80%] flex justify-start w-full mt-2 '>
         <div className='flex-[0.75] flex w-full h-full'><TransactionHistory /></div>
         <div className='flex-[1.5] flex w-full h-full'><WeeklyChart /></div>
       </div>

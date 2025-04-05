@@ -95,3 +95,48 @@ export const transactions = [
       icon: Keyboard
   }
 ];
+
+// balances 
+
+export const balances = [
+  {
+    id: 1,
+    type: "Credit Card",
+    accountNumber: "3388 4556  8860 8***",
+    amount: "25000",
+    bank: "Master Card",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg", 
+  },
+  {
+    id: 2,
+    type: "Checking",
+    accountNumber: "693 456  69 9****",
+    amount: "25000",
+    bank: "AB Bank Ltd",
+    logo: "",
+  },
+  {
+    id: 3,
+    type: "Saving",
+    accountNumber: "133 456  886 8****",
+    amount: "25000",
+    bank: "Brac Bank Ltd.",
+    logo: "",
+  },
+  {
+    id: 4,
+    type: "Investment",
+    accountNumber: "698 456  866 2****",
+    amount: "25000",
+    bank: "AB Bank Ltd",
+    logo: "",
+  },
+  {
+    id: 4,
+    type: "Loan",
+    accountNumber: "363 456  896 6****",
+    amount: "25000",
+    bank: "City Bank Ltd.",
+    logo: "",
+  },
+]
