@@ -132,7 +132,7 @@ export const balances = [
     logo: "",
   },
   {
-    id: 4,
+    id: 5,
     type: "Loan",
     accountNumber: "363 456  896 6****",
     amount: "25000",
