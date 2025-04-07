@@ -3,12 +3,15 @@ import { useLocation } from 'react-router-dom'
 import AddBalance from './AddBalance';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeBalanceAction } from '../actions';
+import { transactions } from '../constants/balanceData';
+import TranasactionTable from './TranasactionTable';
 
 const AccountDetails = () => {
 
   const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
   const [isEdit, setIsEdit] = React.useState(true)
+  const [visible, setVisible] = React.useState(3)
 
   const { state } = useLocation();
   const { id } = state?.balance || {}
@@ -71,9 +74,35 @@ const AccountDetails = () => {
 
       <div className='flex flex-col justify-start items-start gap-1'>
         <span className='text-lg font-normal text-[#878787]'>Transactions History</span>
-        <div className="flex flex-col flex-1 p-[24px] justify-center items-center rounded-[8px] bg-[#fff] shadow-lg w-full min-h-[328px] gap-4">
+        <div className="flex flex-col flex-1 px-[24px] py-[8px] rounded-[8px] bg-[#fff] shadow-lg w-full min-h-[328px] gap-4">
           {/* Header */}
-          fdfs
+          <div className='overflow-y-auto max-h-[280px] scroll-container w-full'>
+            <table class="w-full text-left">
+              <thead className='text-sm font-medium text-[#191919] border-b border-b-[#f4f4f4]'>
+                <tr>
+                  <th className='px-2 py-4 font-medium text-base'>Date</th>
+                  <th className='px-2 py-4 font-medium text-base'>Status</th>
+                  <th className='px-2 py-4 font-medium text-base'>Transaction Type</th>
+                  <th className='px-2 py-4 font-medium text-base'>Reciept</th>
+                  <th className='px-2 py-4 font-medium text-base'>Amount</th>
+                </tr>
+              </thead>
+              {transactions.slice(0, visible).map((transaction, index) => (
+                <tbody>
+                  <tr key={index}>
+                    <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction.date}</td>
+                    <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction?.status}</td>
+                    <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction.type}</td>
+                    <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction.receiptId}</td>
+                    <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction.amount}</td>
+                  </tr>
+                </tbody>
+              ))}
+            </table>
+            <div className='flex justify-center items-center w-full mt-4'>
+              <button onClick={() => setVisible((prev) => prev + 3)} className={`bg-[#299D91] justify-center items-center text-[#fff] px-[32px] py-[12px] rounded-[4px] text-sm font-semibold ${visible >=  transactions.length ? "hidden" : "" }`}>Load More</button>
+            </div>
+          </div>
         </div>
       </div>
 

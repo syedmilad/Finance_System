@@ -25,7 +25,7 @@ const Sidebar = () => {
                 </div>
                 <div className='w-full flex flex-col gap-2'>
                     {sidebaeData.map((sidebar, index) => (
-                        <Link onClick={() => setSelected(sidebar)} to={sidebar.path} key={index} className={`flex items-center cursor-pointer rounded-[4px] w-full hover:bg-[#262626] ${sidebar.title === selected.title ? "bg-primary" : ""} `}>
+                        <Link onClick={() => setSelected(sidebar)} to={sidebar.path} key={index} className={`flex items-center cursor-pointer rounded-[4px] w-full hover:bg-[#262626] ${sidebar.title === selected.title ? "bg-primary hover:bg-primary" : ""} `}>
                             <div className='flex items-center justify-start gap-4 px-[12px] py-[8px]'>
                                 <img src={sidebar.icon} className='w-[20px] h-[20px]' />
                                 <div className='text-base font-normal text-[#FFFFFFB2]'>{sidebar.title}</div>

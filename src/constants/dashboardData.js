@@ -86,6 +86,87 @@ export const transactions = [
       icon: Taxi 
   },
   { 
+      id: 2, 
+      title: "Polo Shirt", 
+      category: "XL fashions", 
+      amount: 20.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: PoloShirt 
+  },
+  { 
+      id: 3, 
+      title: "Biriyani", 
+      category: "Hajir Biriyani", 
+      amount: 10.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Food
+  },
+  { 
+      id: 4, 
+      title: "Taxi Fare", 
+      category: "Uber", 
+      amount: 12.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Taxi 
+  },
+  { 
+      id: 2, 
+      title: "Polo Shirt", 
+      category: "XL fashions", 
+      amount: 20.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: PoloShirt 
+  },
+  { 
+      id: 3, 
+      title: "Biriyani", 
+      category: "Hajir Biriyani", 
+      amount: 10.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Food
+  },
+  { 
+      id: 4, 
+      title: "Taxi Fare", 
+      category: "Uber", 
+      amount: 12.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Taxi 
+  },
+  { 
+      id: 2, 
+      title: "Polo Shirt", 
+      category: "XL fashions", 
+      amount: 20.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: PoloShirt 
+  },
+  { 
+      id: 3, 
+      title: "Biriyani", 
+      category: "Hajir Biriyani", 
+      amount: 10.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Food
+  },
+  { 
+      id: 4, 
+      title: "Taxi Fare", 
+      category: "Uber", 
+      amount: 12.00, 
+      type: "expense", 
+      date: "17 May 2023", 
+      icon: Taxi 
+  },
+  { 
       id: 5, 
       title: "Keyboard", 
       category: "Gadget & Gear", 

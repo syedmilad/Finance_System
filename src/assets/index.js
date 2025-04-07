@@ -26,6 +26,15 @@ import PoloShirt from "./poloShirt.svg"
 import Food from "./food.svg"
 import Keyboard from "./keyboard.svg"
 
+import food from "./foodE.svg"
+import Housing from "./housing.svg"
+import Entertainment from "./extertainment.svg"
+import Transportation from "./transportation.svg"
+import Shopping from "./shopping.svg"
+import Other from "./other.svg"
+import ArrowUp from "./arrowUp.svg"
+import ArrowDown from "./arrowDown.svg"
+
 
 export {
   lightLogo,
@@ -54,4 +63,13 @@ export {
   PoloShirt,
   Food,
   Keyboard,
+
+  food,
+  Entertainment,
+  Shopping,
+  Housing,
+  Other,
+  Transportation,
+  ArrowUp,
+  ArrowDown
 };

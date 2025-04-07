@@ -16,7 +16,7 @@ export const removeBalanceAction = (id) => {
     type: REMOVE_BALANCE,
     payload: id,
   };
-}
+};
 
 export const editBalance = (balance) => {
   /** Balance will be an Object */
