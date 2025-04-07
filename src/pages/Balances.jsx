@@ -1,18 +1,13 @@
 import React from 'react'
-import { balances } from '../constants/dashboardData'
-import Balance from '../components/Balance'
-import Modal from '../components/Modal'
+import { useSelector } from 'react-redux'
 import AddBalance from '../components/AddBalance'
+import Balance from '../components/Balance'
 
 const Balances = () => {
-  const [balance, setBalance] = React.useState(balances)
+  const balances = useSelector((state) => state.balances)
+
   const [isOpen, setIsOpen] = React.useState(false)
   const [isEdit, setIsEdit] = React.useState(false)
-
-  const removeBalanceHandler = (id) => {
-    const updatedBalance = balance.filter((balance) => balance.id !== id)
-    setBalance(updatedBalance)
-  }
 
   const toggle = () => {
     setIsOpen(!isOpen)
@@ -21,11 +16,11 @@ const Balances = () => {
   return (
     <div className='flex flex-col w-full h-[calc(100% - 40px)] px-4 py-2 '>
       {/* Add Accounts */}
-      <AddBalance isEdit={isEdit} setBalance={setBalance} isOpen={isOpen} toggle={toggle} />
+      <AddBalance isEdit={isEdit} isOpen={isOpen} toggle={toggle} />
       <span className='text-2xl font-normal text-[#878787]'>Balances</span>
       <div className='flex flex-wrap justify-start items-start gap-4  max-h-[600px] scroll-container'>
-        {balance.map((balance, index) => (
-          <Balance key={index} balance={{ ...balance }} removeBalance={removeBalanceHandler} />
+        {balances.map((balance, index) => (
+          <Balance key={index} balance={{ ...balance }}  />
         ))}
         <div className="flex flex-col flex-1 p-[24px] justify-center items-center rounded-[8px] bg-[#fff] shadow-lg min-w-[290px] min-h-[270px] max-w-[300px] gap-4">
           {/* Header */}

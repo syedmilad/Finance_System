@@ -1,29 +1,40 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import AddBalance from './AddBalance';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeBalanceAction } from '../actions';
 
 const AccountDetails = () => {
+
+  const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
-    const [isEdit, setIsEdit] = React.useState(true)
-  
+  const [isEdit, setIsEdit] = React.useState(true)
 
   const { state } = useLocation();
-  const { balance } = state || {}
+  const { id } = state?.balance || {}
+
+  const balance = useSelector((state) => state.balances.find((balance) => balance?.id === id))
 
   const isEditModalHanlder = () => {
     setIsOpen(!isOpen)
   }
 
-  const toggle = () =>{
-    if(!isOpen){
+  const toggle = () => {
+    if (!isOpen) {
       setIsOpen(true)
     }
     setIsOpen(false)
   }
 
+  const removeDetailsPage = () => {
+    dispatch(removeBalanceAction(id))
+  }
+
+  if (!balance) return <div className='flex flex-col justify-center items-center w-full h-full'>Balances not found.</div>
+
   return (
     <div className="flex flex-col w-full h-[calc(100% - 40px)] px-4 py-2 gap-4">
-      <AddBalance isOpen={isOpen} toggle={toggle} isEdit={isEdit} initialBalance={balance}  />
+      <AddBalance isOpen={isOpen} toggle={toggle} isEdit={isEdit} initialBalance={balance} />
       <div className='flex flex-col justify-start items-start gap-1'>
         <span className='text-lg font-normal text-[#878787]'>Account Details</span>
         <div className="flex flex-row flex-wrap flex-1 p-[24px] justify-start items-start rounded-[8px] bg-[#fff] shadow-lg w-full min-h-[240px] gap-4">
@@ -53,7 +64,7 @@ const AccountDetails = () => {
 
           <div className='flex flex-row gap-2 '>
             <button onClick={isEditModalHanlder} className="bg-[#299D91] text-[#fff] px-[32px] py-[12px] rounded-[4px] text-sm font-semibold ">Edit Details</button>
-            <button className="bg-[#fff] text-[#9f9f9f] px-[32px] py-[12px] rounded-[4px] text-sm font-medium">Remove</button>
+            <button onClick={removeDetailsPage} className="bg-[#fff] text-[#9f9f9f] px-[32px] py-[12px] rounded-[4px] text-sm font-medium" >Remove</button>
           </div>
         </div>
       </div>

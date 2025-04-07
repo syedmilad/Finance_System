@@ -1,9 +1,12 @@
 import { ArrowRight, ArrowUpRight, ChevronRight } from 'lucide-react';
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { removeBalanceAction } from '../actions';
 
-const Balance = ({ balance, removeBalance }) => {
+const Balance = ({ balance }) => {
 
+    const dispatch = useDispatch()
     const { amount, type, bank, logo, accountNumber, id } = balance;
     const navigate = useNavigate()
 
@@ -34,7 +37,7 @@ const Balance = ({ balance, removeBalance }) => {
             </div>
             {/* Button */}
             <div className='flex justify-between items-center '>
-                <button className='text-[#299D91] text-base font-normal border-none outline-none' onClick={() => removeBalance(id)} >Remove</button>
+                <button className='text-[#299D91] text-base font-normal border-none outline-none' onClick={() => dispatch(removeBalanceAction(id))} >Remove</button>
                 <div onClick={handleNavigate} className='bg-[#299D91] rounded-[4px] px-4 py-2 flex flex-row justify-center items-center gap-1 cursor-pointer' >
                     <span className='text-[#fff]  text-base font-normal flex items-center justify-center'>Details </span>
                     <span className='mt-[2px]'><ChevronRight className='w-4 h-4 object-contain text-white' /></span>

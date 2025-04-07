@@ -1,25 +1,37 @@
 import React from 'react'
-import Modal from './Modal'
+import { useDispatch } from 'react-redux'
+import { addBalance, editBalance } from '../actions'
 import { balances } from '../constants/dashboardData'
+import Modal from './Modal'
+import { toast } from 'react-toastify'
 
-const AddBalance = ({ isEdit,setBalance, isOpen, toggle, initialBalance = {} }) => {
+const AddBalance = ({ isEdit, isOpen, toggle, initialBalance = {} }) => {
+
+    const dispatch = useDispatch()
 
     const [newBalance, setNewBalance] = React.useState(initialBalance || {
-        type: 'Credit Card',
-        amount: '250,000',
-        bank: 'AL Baraka Bank',
-        accountNumber: '456 7890 1234 5678',
+        type: '',
+        amount: '',
+        bank: '',
+        accountNumber: '',
     })
 
     const isSubmitHandler = () => {
         // Handle the submit logic here
         console.log('Submit clicked', newBalance)
 
+        if (!newBalance.type || !newBalance.amount || !newBalance.bank || !newBalance.accountNumber) {
+            toast.error("Please fill all the fields")
+            return
+        }
+
         if(isEdit){
             console.log("isEdit")
-            
+            dispatch(editBalance(newBalance))
         }else{
-            setBalance((prev) => [...prev, newBalance])
+            dispatch(addBalance(newBalance))
+            // setBalance((prev) => [...prev, newBalance])
+
             setNewBalance({
                 type: '',
                 amount: '',

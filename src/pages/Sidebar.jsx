@@ -18,7 +18,7 @@ const Sidebar = () => {
     }, [location.pathname]) // ✅ Set selected state based on current path
 
     return (
-        <div className='w-full h-full border border-red-600 flex flex-col px-[28px] py-[48px] bg-dark text-white '>
+        <div className='w-full h-full flex flex-col px-[28px] py-[48px] bg-dark text-white '>
             <div className='flex-1 flex flex-col items-start justify-start '>
                 <div className=' flex justify-center items-center w-full mb-[48px]'>
                     <img src={logoWhite} alt="logoWhite" />
