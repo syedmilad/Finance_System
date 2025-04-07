@@ -14,7 +14,7 @@ const Expenses = () => {
       </div>
 
       <div className='flex flex-col justify-start items-start gap-1'>
-        <span className='text-lg font-normal text-[#878787]'>Expenses Breakdown</span>
+        <span className='text-lg font-normal text-[#423636]'>Expenses Breakdown</span>
         <div className="flex flex-row flex-wrap gap-4">
           {expenseCategories.map((expense,index)=>(
             <Expense key={index} expense={{...expense}} />
