@@ -167,8 +167,8 @@ const Goals = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-start items-start gap-2">
-        <span className='text-lg font-normal text-[#878787]'>Expenses Goals By Category</span>
+      <div className="flex flex-col justify-start items-start gap-4 ">
+        <span className='text-lg font-normal text-[#878787] mt-2'>Expenses Goals By Category</span>
         <div className='flex flex-row flex-wrap gap-2'>
             {expenseCategories.map((expense,index)=>(
               <GoalComponent key={index} expense={{...expense}} />
