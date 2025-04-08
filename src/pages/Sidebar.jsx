@@ -44,13 +44,13 @@ const Sidebar = () => {
                     <span >Logout</span>
                 </div>
                 <div className='w-full border-b h-[3px] mt-6 mb-6 border-b-[#262626]' />
-                <div className='flex justify-center items-center w-full gap-4 px-[12px] py-[8px]'>
+                <div onClick={()=> navigate("/settings")} className='flex justify-center items-center w-full gap-4 px-[12px] py-[8px]'>
                     <img src={ProfileImg} alt="profile" />
                     <div className='flex flex-col'>
                         <p className='text-base text-[#fff] font-semibold'>Milad Developer</p>
                         <p className='cursor-pointer text-sm text-[#fff] font-normal'>View profile</p>
                     </div>
-                    <img className='cursor-pointer' src={ThreeDot} alt="threeDot" />
+                    <img  className='cursor-pointer' src={ThreeDot} alt="threeDot" />
                 </div>
             </div>
         </div>
