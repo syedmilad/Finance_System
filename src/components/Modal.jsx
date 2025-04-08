@@ -3,7 +3,7 @@ import { Cross } from '../assets'
 
 const Modal = ({ onClose, onSave, isOpen, children }) => {
     return (
-       <div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center ${isOpen ? 'block' : 'hidden'}`}>
+       <div className={`fixed top-0 z-[999] left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center ${isOpen ? 'block' : 'hidden'}`}>
             <div className="bg-white rounded-lg shadow-lg p-6 w-1/3">
                 <div className="flex justify-end items-start ">
                     {/* <h2 className="text-xl font-semibold">Modal Title</h2> */}
