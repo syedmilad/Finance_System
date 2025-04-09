@@ -16,13 +16,11 @@ export const signUp = async (userData) => {
 // Sign In (Login)
 export const signIn = async (credentials) => {
   try {
-    const response = await axiosInstance.post("/auth/sign-in", credentials)
-    console.log("API response", response)
-    if(response.status === 200) {
-      return response.data;
+    const {data,status} = await axiosInstance.post("/auth/sign-in", credentials)
+    if(status === 200) {
+      return data;
     }
   } catch (error) {
-    const {data} = error?.response;
-    return data?.error
+    return error
   };
 };

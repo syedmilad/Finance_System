@@ -31,16 +31,15 @@ const Login = () => {
       try {
         const response =  await signIn(creadential)
         console.log("Response In Login", response)
-        if (response) {
+        if (response.data) {
+          navigate("/")
           toast.success(response.message || "Login Successful!")
           console.log("Login Successful")
           const user = response.data
           localStorage.setItem("userData", JSON.stringify(user))
           localStorage.setItem("isAuthenticated", true)
-          navigate("/")
         } else {
-          toast.error(response ||  "Login Failed!");
-          console.log("Login Failed")
+          toast.error(response.response.data.error ||  "Login Failed!");
         }
       } catch (error) {
         console.log("Error occurred during login:", error);
