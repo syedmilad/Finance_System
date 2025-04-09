@@ -18,8 +18,8 @@ const Transactions = () => {
     <div className='flex flex-col justify-start items-start gap-1 px-4 py-2'>
       <span className='text-lg font-normal text-[#878787]'>Recent Transactions</span>
       <div className='flex flex-row justify-start items-center gap-4 w-full mb-2'>
-        {["all","expense","revenue"].map((item, index) => (
-          <button onClick={()=> setSelectedBtn(item)} key={index} className={`px-[5px] py-[6px] text-base font-normal ${selectedBtn === item ? "text-[#299D91] font-lg border-b border-b-[#299d91] " : ""}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</button>
+        {["all", "expense", "revenue"].map((item, index) => (
+          <button onClick={() => setSelectedBtn(item)} key={index} className={`px-[5px] py-[6px] text-base font-normal ${selectedBtn === item ? "text-[#299D91] font-lg border-b border-b-[#299d91] " : ""}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</button>
         ))}
       </div>
       <div className="flex flex-col flex-1 px-[24px] py-[8px] rounded-[8px] bg-[#fff] shadow-lg w-full min-h-[550px] gap-4">
@@ -35,9 +35,9 @@ const Transactions = () => {
                 <th className='px-2 py-4 font-medium text-base'>Amount</th>
               </tr>
             </thead>
-            {filteredTransactions.slice(0,visible).map((transaction, index) => (
-              <tbody>
-                <tr key={index}>
+            {filteredTransactions.slice(0, visible).map((transaction, index) => (
+              <tbody key={index}>
+                <tr >
                   <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>
                     <div className='flex justify-start items-center gap-2'>
                       <img src={transaction.icon} alt="transaction-img" />
@@ -54,8 +54,8 @@ const Transactions = () => {
           </table>
         </div>
         <div className='flex justify-center items-center w-full mt-4'>
-            <button onClick={handleLoadMore} className={`bg-[#299D91] justify-center items-center text-[#fff] px-[32px] py-[12px] rounded-[4px] text-sm font-semibold ${visible >= transactions.length ? "hidden" : ""}`}>Load More</button>
-          </div>
+          <button onClick={handleLoadMore} className={`bg-[#299D91] justify-center items-center text-[#fff] px-[32px] py-[12px] rounded-[4px] text-sm font-semibold ${visible >= transactions.length ? "hidden" : ""}`}>Load More</button>
+        </div>
       </div>
     </div>
   )

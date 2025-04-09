@@ -6,7 +6,6 @@ const TotalBalance = () => {
     const [active, setActive] = React.useState(1);
 
     const totalAmountWithMemoized = useMemo(() => totalBalance.reduce((acc, { amount }) => {
-        console.log("total amount running...")
         return acc + Number(amount.replace(/,/g, ""))
     }, 0), []).toLocaleString()
 

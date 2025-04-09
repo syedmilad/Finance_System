@@ -2,9 +2,9 @@ import { ArrowBigDown, ArrowBigUp } from 'lucide-react'
 import React from 'react'
 import { ArrowDown, ArrowUp } from '../assets'
 
-const Expense = ({ expense: {category,total,change,changeType,icon,items} }) => {
+const Expense = ({key, expense: {category,total,change,changeType,icon,items} }) => {
     return (
-        <div className='min-w-[340px] max-w-[300px] w-full flex-1 bg-[#fff] rounded-[8px] shadow-lg'>
+        <div key={key} className='min-w-[340px] max-w-[300px] w-full flex-1 bg-[#fff] rounded-[8px] shadow-lg'>
             {/* Header */}
             <div  className="py-4 px-4 bg-[#e8e8e8] flex flex-row justify-between items-center rounded-t-[8px] ">
                 <div className='flex flex-row justify-start items-center gap-2'>

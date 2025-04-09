@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import AddBalance from './AddBalance';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { removeBalanceAction } from '../actions';
 import { transactions } from '../constants/balanceData';
-import TranasactionTable from './TranasactionTable';
+import AddBalance from './AddBalance';
 
 const AccountDetails = () => {
 
@@ -43,7 +42,7 @@ const AccountDetails = () => {
         <div className="flex flex-row flex-wrap flex-1 p-[24px] justify-start items-start rounded-[8px] bg-[#fff] shadow-lg w-full min-h-[240px] gap-4">
           {/* Header */}
           <div className='flex flex-wrap w-full h-full gap-4'>
-            <div className='min-w-[300px] flex flex-col'>
+            <div className='min-w-[300px] flex flex-col'> 
               <span className='text-lg font-semibold text-[#191919]'>Bank Name</span>
               <span className='text-sm font-normal text-[#9f9f9f]'>{balance.bank}</span>
             </div>
@@ -77,7 +76,7 @@ const AccountDetails = () => {
         <div className="flex flex-col flex-1 px-[24px] py-[8px] rounded-[8px] bg-[#fff] shadow-lg w-full min-h-[328px] gap-4">
           {/* Header */}
           <div className='overflow-y-auto max-h-[280px] scroll-container w-full'>
-            <table class="w-full text-left">
+            <table className="w-full text-left">
               <thead className='text-sm font-medium text-[#191919] border-b border-b-[#f4f4f4]'>
                 <tr>
                   <th className='px-2 py-4 font-medium text-base'>Date</th>
@@ -88,8 +87,8 @@ const AccountDetails = () => {
                 </tr>
               </thead>
               {transactions.slice(0, visible).map((transaction, index) => (
-                <tbody>
-                  <tr key={index}>
+                <tbody key={index}>
+                  <tr >
                     <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction.date}</td>
                     <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction?.status}</td>
                     <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>{transaction.type}</td>

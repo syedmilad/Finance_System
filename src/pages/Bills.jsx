@@ -19,8 +19,8 @@ const Bills = () => {
               </tr>
             </thead>
             {upcomingBill.slice(0).map((transaction, index) => (
-              <tbody>
-                <tr key={index}>
+              <tbody key={index}>
+                <tr >
                   <td className='px-2 py-4 font-normal text-[#5b5b5b] text-base'>
                     <div className='flex justify-start items-center gap-2'>
                       <div className='px-4 py-4 bg-[#f4f4f4] flex flex-col justify-center items-center rounded-[8px]'>

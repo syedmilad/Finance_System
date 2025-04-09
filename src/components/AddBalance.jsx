@@ -42,9 +42,6 @@ const AddBalance = ({ isEdit, isOpen, toggle, initialBalance = {} }) => {
         toggle() // close the modal after submission
         
     }
-
-    console.log("id==>",newBalance)
-
     const onValueChangeHandler = (e) => {
 
         const updatedBalances = balances.map((balance,_)=>{
