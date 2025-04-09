@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
-import balanceReducer from "./balanceReducer";
+// import { combineReducers } from "redux";
+// import balanceReducer from "./balanceReducer";
 
-const rootReducer = combineReducers({
-  balance: balanceReducer,
-});
+// const rootReducer = combineReducers({
+//   balance: balanceReducer,
+// });
 
-export default rootReducer;
+// export default rootReducer;
