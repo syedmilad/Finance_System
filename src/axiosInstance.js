@@ -1,18 +1,18 @@
 import axios from "axios";
 
-// const API_BACKEND_BASE_URL = "http://localhost:6067/api/v1"; // Replace with your actual API URL
-const API_BACKEND_BASE_URL = "https://subcriptions-tracker.vercel.app/api/v1"; // Replace with your actual API URL
+const API_BACKEND_BASE_URL = "http://localhost:6067/api/v1"; // Replace with your actual API URL
+// const API_BACKEND_BASE_URL = "https://subcriptions-tracker.vercel.app/api/v1"; // Replace with your actual API URL
 
 const axiosInstance = axios.create({
   baseURL: API_BACKEND_BASE_URL,
   headers: {
     "Content-Type": "application/json",
-  },
-});
+  },  
+}); 
 
-// Request Interceptor to Add Bearer Token
+// Request Interceptor to Add Bearer Token  
 axiosInstance.interceptors.request.use(
-  (config) => {
+  (config) => {   
     const token = localStorage.getItem("token"); // Get token from localStorage
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`; // Attach Bearer token
