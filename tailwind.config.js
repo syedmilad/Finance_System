@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#299D91",
+        primary: "#E7F3F9",
         dark: "#191919",
         grayDark: "#525256",
         gray: "#666666",
@@ -43,6 +43,9 @@ module.exports = {
         22: "22px",
         24: "24px",
       },
+      fontFamily:{
+        sans: ['Roboto', 'sans-serif'], // Set Roboto as the default sans font
+      }
     },
   },
   plugins: [],

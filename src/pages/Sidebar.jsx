@@ -1,60 +1,77 @@
-import React, { useEffect, useState } from 'react';
-import logoWhite from '../assets/logoWhite.svg';
-import { sidebaeData } from '../constants/sidebarData';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Logout, ProfileImg, ThreeDot } from '../assets';
+import { useState } from "react";
+import {
+  Home,
+  Phone,
+  Briefcase,
+  Users,
+  FileText,
+  Banknote,
+  Building,
+  Package,
+  Settings,
+  Monitor,
+  Car,
+  Cog,
+} from "lucide-react";
+import { sidebarWithMenuData } from "../data/sidebaData";
+import clsx from "clsx";
 
 const Sidebar = () => {
-    const navigate = useNavigate();
-    const location = useLocation(); // ✅ Get current path
-    const [selected, setSelected] = useState({ title: 'Dashboard', path: '/' })
+  const [active, setActive] = useState("portfolio");
+  const [MenuItem, setMenuItem] = useState({
+    name: "portfolio",
+    label: "Portfolio",
+  });
+  const [subMenuItem, setSubMenuItem] = useState(null);
 
-    useEffect(() => {
-        const currentPath = sidebaeData.find((sidebar) => sidebar.path === location.pathname);
-        if (currentPath) {
-            setSelected(currentPath); // ✅ Set selected state based on current path
-        }
+  console.log("subMenuItem==>", subMenuItem);
 
-    }, [location.pathname]) // ✅ Set selected state based on current path
+  return (
+    <div className="flex h-screen bg-white py-[40px] px-[12px] space-x-4">
+      {/* Sidebar */}
+      <div className="bg-primary px-4 py-[60px] flex flex-col items-center space-y-6 rounded-2xl max-h-[784px] ">
+        {sidebarWithMenuData?.map((item, index) => (
+          <div
+            className={clsx(
+              "flex flex-col relative items-center px-4 py-1 rounded-[2px] cursor-pointer hover:bg-[#B5DEF2] ",
+              item.name === MenuItem.name ? "bg-[#B5DEF2]" : ""
+            )}
+            onClick={() => setMenuItem(item)}
+            key={index}
+          >
+            <img
+              src={item?.icon}
+              alt={item?.icon}
+              className="w-[20px] h-[20px] object-contain"
+            />
 
-    return (
-        <div className='w-full h-full flex flex-col px-[28px] py-[48px] bg-dark text-white '>
-            <div className='flex-1 flex flex-col items-start justify-start '>
-                <div className=' flex justify-center items-center w-full mb-[48px]'>
-                    <img src={logoWhite} alt="logoWhite" />
+            {item.name === MenuItem.name && (
+              <div className="absolute  top-0 left-[68px] flex flex-col items-start justify-start min-w-[150px] ">
+                <span className="text-[#003A92] font-bold text-base">
+                  {item?.submenuItem?.label}
+                </span>
+                <div className="flex flex-col items-start justify-start space-y-2 mt-2 px-2 w-full">
+                  {item?.submenuItem?.items?.map((subItem, subIndex) => (
+                    <span
+                      onClick={() => setSubMenuItem(subItem)}
+                      className={clsx(
+                        "text-[#272729] font-normal text-sm px-2 hover:bg-[#E7F3F9] w-full  ",
+                        subItem.name === subMenuItem?.name
+                          ? "bg-[#E7F3F9]"
+                          : ""
+                      )}
+                    >
+                      {subItem.label}
+                    </span>
+                  ))}
                 </div>
-                <div className='w-full flex flex-col gap-2'>
-                    {sidebaeData.map((sidebar, index) => (
-                        <Link onClick={() => setSelected(sidebar)} to={sidebar.path} key={index} className={`flex items-center cursor-pointer rounded-[4px] w-full hover:bg-[#262626] ${sidebar.title === selected.title ? "bg-primary hover:bg-primary" : ""} `}>
-                            <div className='flex items-center justify-start gap-4 px-[12px] py-[8px]'>
-                                <img src={sidebar.icon} className='w-[20px] h-[20px]' />
-                                <div className='text-base font-normal text-[#FFFFFFB2]'>{sidebar.title}</div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            </div>
-            <div className='flex  flex-col'>
-                <div onClick={() => {
-                    localStorage.setItem('isAuthenticated', false);
-                    localStorage.removeItem('userData');
-                    navigate('/sign-in', { replace: true })
-                }} className='flex justify-start items-center w-full gap-4 px-[16px] py-[12px] bg-[#262626] cursor-pointer rounded-[4px]'>
-                    <img src={Logout} alt="logout" />
-                    <span >Logout</span>
-                </div>
-                <div className='w-full border-b h-[3px] mt-6 mb-6 border-b-[#262626]' />
-                <div onClick={()=> navigate("/settings")} className='flex justify-center items-center w-full gap-4 px-[12px] py-[8px]'>
-                    <img src={ProfileImg} alt="profile" />
-                    <div className='flex flex-col'>
-                        <p className='text-base text-[#fff] font-semibold'>Milad Developer</p>
-                        <p className='cursor-pointer text-sm text-[#fff] font-normal'>View profile</p>
-                    </div>
-                    <img  className='cursor-pointer' src={ThreeDot} alt="threeDot" />
-                </div>
-            </div>
-        </div>
-    )
-}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
