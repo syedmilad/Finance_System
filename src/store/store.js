@@ -1,9 +1,10 @@
 import { compose, createStore } from "redux";
 
 import balanceReducer from "../reducers/balanceReducer";
+import { sidebarReducer } from "../reducers/sidebarReducer";
 
 const store = createStore(
-  balanceReducer,
+  sidebarReducer,
   compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 );
 

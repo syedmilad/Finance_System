@@ -1,12 +1,1 @@
-export {default as Dashboard} from './Dashboard';
-export {default as Login} from './Login';
-export {default as Signup} from './Signup';
-export {default as Settings} from './Settings'; 
-export {default as ForgotPassword} from './ForgotPassword'; 
-export {default as Balances} from './Balances'; 
-export {default as Goals} from './Goals'; 
-export {default as Transactions} from './Transactions'; 
-export {default as Bills} from './Bills'; 
-export {default as Welcome} from './Welcome'; 
-export {default as AccountDetails} from './AccountDetails'; 
-export {default as Expenses} from './Expenses'; 
+export { default as Dashboard } from "./Dashboard";
