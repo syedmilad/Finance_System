@@ -13,9 +13,9 @@ const TopBar = () => {
         <img
           src={PropertySetting}
           alt="ring-image"
-          className="h-[20px]  w-[20px] object-contain"
+          className="h-[20px]  w-[20px] object-contain cursor-pointer "
         />
-        <div className="relative flex flex-row gap-6">
+        <div className="relative flex flex-row gap-6 cursor-pointer ">
           <img
             src={Ring}
             alt="ring-image"
@@ -27,7 +27,7 @@ const TopBar = () => {
       </div>
 
       {/* User Info */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 cursor-pointer">
         <img src={UserIcon} alt="" />
         <div>
           <p className="text-sm font-semibold text-[#272729] leading-none">

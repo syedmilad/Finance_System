@@ -8,29 +8,24 @@ import { useEffect } from "react";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const menuItem = useSelector((state) => state.menuItem);
-  const subMenuItem = useSelector((state) => state.setMenuItem);
-
-  console.log("subMenuItem", subMenuItem);
+  const menuItem = useSelector((state) => state?.menuItem);
+  const subMenuItem = useSelector((state) => state?.subMenuItem);
 
   useEffect(() => {
     const pathParts = location.pathname.split("/").filter(Boolean); // ['units', 'abc']
     if (pathParts.length >= 1) {
       const main = pathParts[0]; // 'units'
       const sub = pathParts[1]; // 'abc'
-      console.log("pathParts", pathParts);
 
       const matchedMenu = sidebarWithMenuData.find(
         (item) => item.name === main
       );
-      console.log("matchedMenu", matchedMenu);
       if (matchedMenu) {
         dispatch(setMenuItem(matchedMenu));
 
         const matchedSub = matchedMenu?.submenuItem?.items?.find(
           (subItem) => subItem.name === sub
         );
-        console.log("subMenuItem", matchedSub);
         if (matchedSub) {
           dispatch(setSubMenuItem(matchedSub));
         } else {
@@ -72,7 +67,9 @@ const Sidebar = () => {
                       onClick={() => dispatch(setSubMenuItem(subItem))}
                       className={clsx(
                         "text-[#272729] font-normal text-sm px-2 hover:bg-[#E7F3F9] w-full  ",
-                        subMenuItem?.name === subItem.name  ? "bg-[#E7F3F9]" : ""
+                        subMenuItem?.name === subItem.name
+                          ? "bg-[#E7F3F9]"
+                          : ""
                       )}
                     >
                       {subItem.label}

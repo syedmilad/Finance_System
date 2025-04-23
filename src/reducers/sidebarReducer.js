@@ -1,8 +1,8 @@
 import { SET_MENU_ITEM, SET_SUB_MENU_ITEM } from "../actions";
 
 const initialState = {
-  menuItem: { name: "portfolio", label: "Portfolio" },
-  subMenuItem: null,
+  menuItem: { name: "frame", label: "Frame" },
+  subMenuItem: {name: "units", label: "Units"},
 };
 
 export const sidebarReducer = (state = initialState, action) => {
