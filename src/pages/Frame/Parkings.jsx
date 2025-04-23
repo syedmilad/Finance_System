@@ -2,7 +2,7 @@ import React from 'react'
 
 const Parkings = () => {
   return (
-    <div>Parkings</div>
+    <div className='px-4 py-4 bg-[#ffff] flex flex-col h-full min-w-full'>Parkings</div>
   )
 }
 

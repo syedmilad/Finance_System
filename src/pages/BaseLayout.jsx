@@ -4,15 +4,23 @@ import Header from "./Header";
 
 const BaseLayout = ({ children }) => {
   return (
-    <div className="h-screen flex flex-col ">
-      <div className=" min-w-full w-screen min-h-[60px]">
+    <div className="h-screen flex flex-col overflow-hidden">
+      {/* Header */}
+      <div className="w-full min-h-[60px] flex-shrink-0">
         <Header />
       </div>
-      <div className="w-full h-full flex flex-row !bg-[#f4f5f7]">
-        <div className="min-w-[240px]  ">
+
+      {/* Body */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar */}
+        <div className="w-[240px] flex-shrink-0">
           <Sidebar />
         </div>
-        <div className="min-w-[calc(240px - 100%)] w-full">{children}</div>
+
+        {/* Main Content Area */}
+        <div className="flex-1 overflow-auto bg-white">
+          {children}
+        </div>
       </div>
     </div>
   );

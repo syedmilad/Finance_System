@@ -17,6 +17,23 @@ module.exports = {
         opacity25: "rgba(210, 210, 210, 0.25)",
         opacity70: "rgba(255, 255, 255, 0.7)",
         opacity85: "rgba(255, 255, 255, 0.85)",
+        btnBgPrimary: "#70EDE2",
+        btnTextPrimary: "#272729",
+        dropBg: "#003A92",
+        'chart-paid': '#82E9DE',    // Light Teal
+        'chart-unpaid': '#25A6E9', // Darker Blue
+        'filter-icon-bg': '#ECFEFF', // Or 'cyan-50'
+        'filter-icon-text': '#06B6D4', // Or 'cyan-600'
+        'income-green': '#82E9DE',   // Using the teal from image
+        'expense-red': '#EF4444',    // Tailwind's red-500
+        'filter-icon-bg': '#ECFEFF', // Tailwind's cyan-50
+        'filter-icon-text': '#06B6D4', // Tailwind's cyan-600
+        'facility-plumbing': '#76DDE0', // Custom Teal
+        'facility-electrical': '#1C6FC4', // Custom Dark Blue
+        // 'facility-joinery': '#3B82F6', // This is blue-500, maybe keep as is
+        'radial-complete': '#76DDE0',     // Custom Teal again for radial
+        'filter-icon-bg': '#ECFEFF',     // Tailwind's cyan-50
+        'filter-icon-text': '#06B6D4',    // Tailwind's cyan-600
       },
       fontSize: {
         xs: ["12px", "16px"],

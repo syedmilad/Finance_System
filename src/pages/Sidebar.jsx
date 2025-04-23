@@ -36,9 +36,9 @@ const Sidebar = () => {
   }, [location.pathname, dispatch]);
 
   return (
-    <div className="flex h-screen bg-white py-[16px] px-[12px] space-x-4">
+    <div className="flex h-full w-full bg-white py-[16px] space-x-4 border border-[#2d2d2d]">
       {/* Sidebar */}
-      <div className="bg-primary px-4 py-[60px] flex flex-col items-center space-y-6 rounded-2xl max-h-[784px] ">
+      <div className="bg-primary px-3 py-[60px] flex flex-col items-center space-y-6 rounded-2xl max-h-[784px] ">
         {sidebarWithMenuData?.map((item, index) => (
           <div
             className={clsx(
@@ -54,30 +54,30 @@ const Sidebar = () => {
               className="w-[20px] h-[20px] object-contain"
             />
 
-            {item.name === menuItem?.name && (
-              <div className="absolute  top-0 left-[68px] flex flex-col items-start justify-start min-w-[150px] ">
-                <span className="text-[#003A92] font-bold text-base">
-                  {item?.submenuItem?.label}
-                </span>
-                <div className="flex flex-col items-start justify-start space-y-2 mt-2 px-2 w-full">
-                  {item?.submenuItem?.items?.map((subItem, subIndex) => (
-                    <Link
-                      to={`/${item?.name}/${subItem?.name}`}
-                      key={subIndex}
-                      onClick={() => dispatch(setSubMenuItem(subItem))}
-                      className={clsx(
-                        "text-[#272729] font-normal text-sm px-2 hover:bg-[#E7F3F9] w-full  ",
-                        subMenuItem?.name === subItem.name
-                          ? "bg-[#E7F3F9]"
-                          : ""
-                      )}
-                    >
-                      {subItem.label}
-                    </Link>
-                  ))}
+              {item.name === menuItem?.name && (
+                <div className="absolute  top-0 left-[68px] flex flex-col  items-start justify-start min-w-[150px] ">
+                  <span className="text-[#003A92] font-bold text-base">
+                    {item?.submenuItem?.label}
+                  </span>
+                  <div className="flex flex-col items-start justify-start space-y-2 mt-2 px-2 w-full">
+                    {item?.submenuItem?.items?.map((subItem, subIndex) => (
+                      <Link
+                        to={`/${item?.name}/${subItem?.name}`}
+                        key={subIndex}
+                        onClick={() => dispatch(setSubMenuItem(subItem))}
+                        className={clsx(
+                          "text-[#272729] font-normal text-sm px-2 py-1 hover:bg-[#E7F3F9] w-full block",
+                          subMenuItem?.name === subItem.name
+                            ? "bg-[#E7F3F9]"
+                            : ""
+                        )}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         ))}
       </div>
