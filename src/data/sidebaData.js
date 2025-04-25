@@ -29,14 +29,14 @@ export const sidebarWithMenuData = [
     },
   },
   {
-    name: "outline",
-    label: "Outline",
+    name: "leasing",
+    label: "Leasing",
     icon: Outline,
     submenuItem: {
       name: "leasing",
       label: "Leasing",
       items: [
-        { name: "all lease", label: "All Lease" },
+        { name: "allLease", label: "All Lease" },
         { name: "draft", label: "Draft" },
         { name: "active", label: "Active" },
         { name: "completed", label: "Completed" },

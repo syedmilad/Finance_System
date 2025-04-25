@@ -1,16 +1,16 @@
 import Button from "./Button";
 import Dropdown from "./Common/Dropdown";
 
-const HeadUnits = () => {
+const HeadUnits = ({title="Unit No",btnTitle="Vacant",status="status"}) => {
   return (
     <section className="w-full h-full flex flex-1 justify-between items-start">
       <div>
         <span className="text-xl font-semibold text-btnTextPrimary">
-          Unit No
+          {title}
         </span>
         <div className="flex flex-row items-center justify-start gap-2">
-          <p className="text-base font-normal text-btnTextPrimary">Status</p>
-          <Button title="Vacant" />
+          <p className="text-base font-normal text-btnTextPrimary">{status}</p>
+          <Button title={btnTitle} />
         </div>
       </div>
       <div>

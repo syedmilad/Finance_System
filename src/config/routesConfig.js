@@ -34,11 +34,11 @@ const routes = [
 //   { path: "/facitaly/services", component: lazy(() => import("../pages/Facitaly/Services")) },
 //   { path: "/facitaly/schedules", component: lazy(() => import("../pages/Facitaly/Schedules")) },
 
-  // Outline menu
-  { path: "/leasing/leasing", component: lazy(() => import("../pages/Leasing/Leasing")) },
-  { path: "/leasing/active", component: lazy(() => import("../pages/Leasing/Active")) },
-  { path: "/leasing/completed", component: lazy(() => import("../pages/Leasing/Completed")) },
-  { path: "/leasing/draft", component: lazy(() => import("../pages/Leasing/Draft")) },
+    // Outline menu
+    { path: "/leasing/allLease", component: lazy(() => import("../pages/Leasing/Leasing")) },
+    { path: "/leasing/active", component: lazy(() => import("../pages/Leasing/Active")) },
+    { path: "/leasing/completed", component: lazy(() => import("../pages/Leasing/Completed")) },
+    { path: "/leasing/draft", component: lazy(() => import("../pages/Leasing/Draft")) },
 
 //   // OutlineGeneral menu
 //   { path: "/outline-general/overview", component: lazy(() => import("../pages/OutlineGeneral/Overview")) },
