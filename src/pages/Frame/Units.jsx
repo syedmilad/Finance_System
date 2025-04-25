@@ -25,7 +25,6 @@ const tabComponents = {
   Inspection: Inspection,
 };
 
-
 const Units = () => {
   const [activeTab, setActiveTab] = useState("Overview");
 
@@ -39,8 +38,8 @@ const Units = () => {
       <div className="mt-4">
         <Tabs tabs={tabs} setActiveTab={setActiveTab} activeTab={activeTab} />
       </div>
-       {/* Content */}
-       <div className="bg-white p-4 mt-4 min-h-[200px] h-screen border border-black ">
+      {/* Content */}
+      <div className="bg-white p-4 mt-4 min-h-screen ">
         <ActiveComponent />
       </div>
     </div>

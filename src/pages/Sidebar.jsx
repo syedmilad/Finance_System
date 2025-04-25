@@ -36,7 +36,7 @@ const Sidebar = () => {
   }, [location.pathname, dispatch]);
 
   return (
-    <div className="flex h-full w-full bg-white py-[16px] space-x-4 border border-[#2d2d2d]">
+    <div className="flex h-full w-full bg-white py-[16px] space-x-4">
       {/* Sidebar */}
       <div className="bg-primary px-3 py-[60px] flex flex-col items-center space-y-6 rounded-2xl max-h-[784px] ">
         {sidebarWithMenuData?.map((item, index) => (

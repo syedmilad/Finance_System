@@ -19,3 +19,91 @@ export const facilityData = [
   { label: "Electrical", value: 90, colorClass: "bg-[#1C6FC4]" }, // Custom Dark Blue
   { label: "Joinery", value: 70, colorClass: "bg-[#3B82F6]" }, // Tailwind Blue-500
 ];
+
+export const rentSaleDetailsData = [
+  {
+    label: "Security Deposit",
+    value: "AED 5,000.00", // Example value
+  },
+  {
+    label: "Market Value",
+    value: "AED 1,250,000.00", // Example value
+  },
+  {
+    label: "Threshold Value",
+    value: "AED 1,110,000.00", // Example value
+  },
+  {
+    label: "Rent Per Square Foot",
+    value: "AED 85.50", // Example value
+  },
+  {
+    label: "Actual Rent Value",
+    value: "AED 60,000.00", // Example: Could be annual rent
+  },
+];
+
+
+export const leaseHistoryData = [
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2024',
+      endDate: '09-12-2025',
+      rent: '20,000.00'
+    },
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2023',
+      endDate: '09-12-2024',
+      rent: '20,000.00'
+    },
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2022',
+      endDate: '09-12-2023',
+      rent: '20,000.00'
+    },
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2021',
+      endDate: '09-12-2022',
+      rent: '20,000.00'
+    },
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2020',
+      endDate: '09-12-2021',
+      rent: '20,000.00'
+    },
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2019',
+      endDate: '09-12-2020',
+      rent: '20,000.00'
+    },
+    {
+      name: 'John Thomas',
+      status: 'Active',
+      startDate: '10-12-2018',
+      endDate: '09-12-2019',
+      rent: '20,000.00'
+    }
+    // Add more rows if needed, following the pattern
+  ];
+
+// Sample Data (Matches the image structure)
+export const rentalData = [
+  { id: 1, name: 'John Thomas', status: 'Active', startDate: '10-12-2024', endDate: '09-12-2025', rent: 20000.00 },
+  { id: 2, name: 'John Thomas', status: 'Active', startDate: '10-12-2023', endDate: '09-12-2024', rent: 20000.00 },
+  { id: 3, name: 'John Thomas', status: 'Active', startDate: '10-12-2022', endDate: '09-12-2023', rent: 20000.00 },
+  { id: 4, name: 'John Thomas', status: 'Active', startDate: '10-12-2021', endDate: '09-12-2022', rent: 20000.00 },
+  { id: 5, name: 'John Thomas', status: 'Active', startDate: '10-12-2020', endDate: '09-12-2021', rent: 20000.00 },
+  { id: 6, name: 'John Thomas', status: 'Active', startDate: '10-12-2019', endDate: '09-12-2020', rent: 20000.00 },
+  { id: 7, name: 'John Thomas', status: 'Active', startDate: '10-12-2018', endDate: '09-12-2019', rent: 20000.00 },
+];

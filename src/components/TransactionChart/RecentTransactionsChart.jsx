@@ -23,7 +23,7 @@ const totalBilled = totalPaid + totalUnpaid;
 // --- Main Chart Component ---
 const RecentTransactionsChart = () => {
   return (
-    <div className="bg-white p-4 sm:p-6 rounded-lg ">
+    <div className="bg-white p-4 sm:p-6 shadow-md rounded-lg h-full w-full ">
       {/* Header Section */}
       <div className="flex justify-between items-start mb-4 ">
         <div>

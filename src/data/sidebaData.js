@@ -29,6 +29,21 @@ export const sidebarWithMenuData = [
     },
   },
   {
+    name: "outline",
+    label: "Outline",
+    icon: Outline,
+    submenuItem: {
+      name: "leasing",
+      label: "Leasing",
+      items: [
+        { name: "all lease", label: "All Lease" },
+        { name: "draft", label: "Draft" },
+        { name: "active", label: "Active" },
+        { name: "completed", label: "Completed" },
+      ],
+    },
+  },
+  {
     name: "home",
     label: "Home",
     icon: Home,
@@ -95,20 +110,6 @@ export const sidebarWithMenuData = [
         { name: "fac-1", label: "Buildings" },
         { name: "fac-2", label: "Services" },
         { name: "fac-3", label: "Schedules" },
-      ],
-    },
-  },
-  {
-    name: "outline",
-    label: "Outline",
-    icon: Outline,
-    submenuItem: {
-      name: "outline_menu",
-      label: "Outline Menu",
-      items: [
-        { name: "outline-1", label: "Plan A" },
-        { name: "outline-2", label: "Plan B" },
-        { name: "outline-3", label: "Plan C" },
       ],
     },
   },
