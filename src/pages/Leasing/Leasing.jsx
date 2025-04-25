@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import HeadUnits from "../../components/HeadUnits";
-import Tabs from "../../components/Tabs";
-import OverviewLeasing from "../../components/Leasing/OverviewLeasing/OverviewLeasing";
-import Residents from "../../components/Leasing/Residents/Residents";
-import UnitsLeasing from "../../components/Leasing/UnitsLeasing/UnitsLeasing";
-import FinancialsLeasing from "../../components/Leasing/FinancialsLeasing/FinancialsLeasing";
-import RequestWO from "../../components/Leasing/RequestWO/RequestWO";
 import Checks from "../../components/Leasing/Checks/Checks";
 import CommunicationLeasing from "../../components/Leasing/CommunicationLeasing/CommunicationLeasing";
+import FinancialsLeasing from "../../components/Leasing/FinancialsLeasing/FinancialsLeasing";
 import LegalLeasing from "../../components/Leasing/LegalLeasing/LegalLeasing";
 import NotesLeasing from "../../components/Leasing/NotesLeasing/NotesLeasing";
+import Overview from "../../components/Leasing/OverviewLeasing/Overview";
+import RequestWO from "../../components/Leasing/RequestWO/RequestWO";
+import Residents from "../../components/Leasing/Residents/Residents";
+import UnitsLeasing from "../../components/Leasing/UnitsLeasing/UnitsLeasing";
+import Tabs from "../../components/Tabs";
 
 const tabComponents = {
-  Overview: OverviewLeasing,
+  Overview: Overview,
   Residents: Residents,
   Units: UnitsLeasing,
   "Financials": FinancialsLeasing,

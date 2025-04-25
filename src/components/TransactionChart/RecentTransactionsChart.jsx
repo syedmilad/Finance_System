@@ -1,18 +1,16 @@
 import React from 'react';
 import {
-  BarChart,
   Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
+  BarChart,
   ResponsiveContainer,
-  Cell // Import Cell for potential custom colors if needed later
+  Tooltip,
+  XAxis,
+  YAxis
 } from 'recharts';
-import CustomLegend from './Legend';
-import FilterIcon from './FilterIcon';
-import CustomTooltip from './CustomTooltip';
 import { chartData } from '../../data/chartData';
+import CustomTooltip from './CustomTooltip';
+import FilterIcon from './FilterIcon';
+import CustomLegend from './Legend';
 
 
 const totalPaid = chartData.reduce((sum, item) => sum + item.paid, 0);
@@ -21,14 +19,14 @@ const totalBilled = totalPaid + totalUnpaid;
 
 
 // --- Main Chart Component ---
-const RecentTransactionsChart = () => {
+const RecentTransactionsChart = ({title="Recent Transactions"}) => {
   return (
     <div className="bg-white p-4 sm:p-6 shadow-md rounded-lg h-full w-full ">
       {/* Header Section */}
       <div className="flex justify-between items-start mb-4 ">
         <div>
           <h2 className="text-lg font-semibold text-[#272729 ]">
-            Recent Transactions
+            {title}
           </h2>
           <p className="text-sm font-normal text-[#BDBDBD]">Jan 24 - Dec 24</p> {/* Make dynamic later */}
         </div>
